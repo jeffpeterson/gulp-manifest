@@ -41,6 +41,10 @@ function manifest(options) {
       return;
     }
 
+    if (options.reemit) {
+      this.emit('data', file);
+    }
+
     contents.push(encodeURI(file.relative));
 
     if (options.hash) {

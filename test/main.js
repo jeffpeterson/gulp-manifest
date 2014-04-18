@@ -81,4 +81,22 @@ describe('gulp-manifest', function() {
     generateWithHash();
     generateWithHash();
   });
+
+  context('when options.reemit is true', function() {
+    it('Should re-emit files', function(done) {
+      var count = fakeFiles.length + 1;
+      var stream = manifestPlugin({reemit: true});
+      stream.on('data', function() {
+        count--;
+      });
+
+      stream.once('end', function() {
+        count.should.equal(0);
+        done();
+      });
+
+      fakeFiles.forEach(stream.write.bind(stream));
+      stream.end();
+    });
+  });
 });

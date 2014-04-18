@@ -1,7 +1,7 @@
-# gulp-manifest 
+# gulp-manifest
 > Generate HTML5 Cache Manifest files. Submitted by [Scott Hillman](https://github.com/hillmanov/).
 
-Big thanks to [Gunther Brunner](https://github.com/gunta/) for writing the [grunt-manifest](https://github.com/gunta/grunt-manifest) plugin. This plugin was heavily influenced by his great work. 
+Big thanks to [Gunther Brunner](https://github.com/gunta/) for writing the [grunt-manifest](https://github.com/gunta/grunt-manifest) plugin. This plugin was heavily influenced by his great work.
 
 Visit the [Appcache Facts](http://appcachefacts.info/) for more information on Cache Manifest files.
 
@@ -41,7 +41,7 @@ Exclude specific files from the Cache Manifest file.
 
 #### options.network
 Type: `String` `Array`  
-Default: `"*"` (By default, an online whitelist wildcard flag is added)   
+Default: `"*"` (By default, an online whitelist wildcard flag is added)
 
 Adds a string to the **NETWORK** section.
 
@@ -56,7 +56,7 @@ Adds a string to the **FALLBACK** section.
 See [here](http://diveintohtml5.info/offline.html#fallback) for more information.
 
 #### options.preferOnline
-Type: `Boolean`   
+Type: `Boolean`
 Default: `undefined`
 
 Adds a string to the **SETTINGS** section, specifically the cache mode flag of the ```prefer-online``` state.
@@ -64,8 +64,8 @@ Adds a string to the **SETTINGS** section, specifically the cache mode flag of t
 See [here](http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#concept-appcache-mode-prefer-online) for more information.
 
 #### options.timestamp
-Type: `Boolean`   
-Default: `true` 
+Type: `Boolean`
+Default: `true`
 
 Adds a timestamp as a comment for easy versioning.
 
@@ -78,6 +78,12 @@ Default: `false`
 Adds a sha256 hash of all `src` files (actual contents) as a comment.
 
 This will ensure that application cache invalidates whenever actual file contents change (it's recommented to set `timestamp` to `false` when `hash` is used).
+
+#### options.reemit
+Type: `Boolean`
+Default: `false`
+
+Re-emits input files along with the manifest file.
 
 ### Usage Example
 
